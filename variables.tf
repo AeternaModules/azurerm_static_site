@@ -20,8 +20,8 @@ EOT
     name                = string
     resource_group_name = string
     app_settings        = optional(map(string))
-    sku_size            = optional(string, "Free")
-    sku_tier            = optional(string, "Free")
+    sku_size            = optional(string) # Default: "Free"
+    sku_tier            = optional(string) # Default: "Free"
     tags                = optional(map(string))
     identity = optional(object({
       identity_ids = optional(set(string))
