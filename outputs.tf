@@ -1,47 +1,42 @@
-output "static_sites" {
-  description = "All static_site resources"
-  value       = azurerm_static_site.static_sites
-  sensitive   = true
-}
 output "static_sites_api_key" {
-  description = "List of api_key values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.api_key]
+  description = "Map of api_key values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.api_key }
   sensitive   = true
 }
 output "static_sites_app_settings" {
-  description = "List of app_settings values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.app_settings]
+  description = "Map of app_settings values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.app_settings }
 }
 output "static_sites_default_host_name" {
-  description = "List of default_host_name values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.default_host_name]
+  description = "Map of default_host_name values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.default_host_name }
 }
 output "static_sites_identity" {
-  description = "List of identity values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.identity]
+  description = "Map of identity values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.identity }
 }
 output "static_sites_location" {
-  description = "List of location values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.location]
+  description = "Map of location values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.location }
 }
 output "static_sites_name" {
-  description = "List of name values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.name]
+  description = "Map of name values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.name }
 }
 output "static_sites_resource_group_name" {
-  description = "List of resource_group_name values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.resource_group_name]
+  description = "Map of resource_group_name values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.resource_group_name }
 }
 output "static_sites_sku_size" {
-  description = "List of sku_size values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.sku_size]
+  description = "Map of sku_size values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.sku_size }
 }
 output "static_sites_sku_tier" {
-  description = "List of sku_tier values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.sku_tier]
+  description = "Map of sku_tier values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.sku_tier }
 }
 output "static_sites_tags" {
-  description = "List of tags values across all static_sites"
-  value       = [for k, v in azurerm_static_site.static_sites : v.tags]
+  description = "Map of tags values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.tags }
 }
 
