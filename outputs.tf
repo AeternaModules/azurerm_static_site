@@ -1,3 +1,7 @@
+output "static_sites_id" {
+  description = "Map of id values across all static_sites, keyed the same as var.static_sites"
+  value       = { for k, v in azurerm_static_site.static_sites : k => v.id }
+}
 output "static_sites_api_key" {
   description = "Map of api_key values across all static_sites, keyed the same as var.static_sites"
   value       = { for k, v in azurerm_static_site.static_sites : k => v.api_key }
