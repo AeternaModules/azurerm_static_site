@@ -17,7 +17,7 @@ output "static_sites_default_host_name" {
 }
 output "static_sites_identity" {
   description = "Map of identity values across all static_sites, keyed the same as var.static_sites"
-  value       = { for k, v in azurerm_static_site.static_sites : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_static_site.static_sites : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "static_sites_location" {
   description = "Map of location values across all static_sites, keyed the same as var.static_sites"
